@@ -1,18 +1,18 @@
 {% set name = "xphyle" %}
-{% set version = "4.3.0" %}
+{% set version = "4.4.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: cdedacba0667ff864d9ad1a600f80734c942cceb70260735482bea2a16c18365
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 29601dab1d227dea262bdb52dce34836952bb2483f84dc203cec4320841b67db
 
 build:
   skip: true  # [not unix]
-  number: 1
-  script: "{{ PYTHON }} -m pip install . -vv"
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -31,11 +31,11 @@ test:
     - pytest-cov
 
 about:
-  home: "https://github.com/jdidion/xphyle"
+  home: https://github.com/jdidion/xphyle
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: "Utilities for working with files."
+  summary: Utilities for working with files.
   dev_url: https://github.com/jdidion/xphyle
 
 extra:
