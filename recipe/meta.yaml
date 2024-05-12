@@ -1,5 +1,5 @@
 {% set name = "xphyle" %}
-{% set version = "4.4.2" %}
+{% set version = "4.4.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6a31246a26dcd835677e1315a51f828375eab71acf2fcb1ac0657147b45caa0c
+  sha256: 2ec69c1e795d0c35ecc0a4572cb1eb6647b79d0f8746646cd3f6159c33e2ce2c
 
 build:
   skip: true  # [not unix]
-  number: 3
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
